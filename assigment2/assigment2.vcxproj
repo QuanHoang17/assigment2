@@ -153,6 +153,11 @@
   <ItemGroup>
     <ClCompile Include="assigment2.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="controller.h" />
+    <ClInclude Include="items.h" />
+    <ClInclude Include="text_interface.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
