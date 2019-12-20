@@ -1,10 +1,16 @@
 
-#include <iostream>;
-#include <string>;
-#include "text_interface.h";
+#include "text_interface.h"
+
+#include "items.h"
+#include "accounts_management.h"
+
+
 
 using namespace std;
 class Controller {
+private: 
+	
+	
 
 public:
 	Controller() {};
@@ -14,7 +20,7 @@ public:
 	string getInput();
 	
 	void function1();
-	void function2() {};
+	void function2();
 	void function3() {};
 	void function4() {};
 	void function5() {};
@@ -28,14 +34,33 @@ public:
 
 
 string Controller::getInput() {
-	char input[100];
-	cin.getline(input, 100);
-	return (string) input;
+	string input;
+	getline(cin, input);
+	return input;
 }
 
 void Controller::function1() {
-	printSubMenu(1);
+	int num = getSelection(1);
+	if (num == 1) {
 
+		
+	}
+	else if (num == 2) {
+
+		
+	}
+	else if (num == 3) {
+
+		
+	}
+}
+void Controller::function2() {
+	int num = getSelection(2);
+	if (num == 1){
+		addCustomer();
+
+	}
+	
 
 }
 
@@ -51,12 +76,14 @@ void Controller::start() {
 			break;
 		}
 		else if (ans == "1") {
+		
 			function1();
 			
 		}
 		else if (ans == "2") {
+			
 			function2();
-		
+			
 		}
 		else if (ans == "3") {
 			function3();
@@ -89,9 +116,11 @@ void Controller::start() {
 			function10();
 		}
 		else {
-			cout << "Wrong Input. Re-enter please!" << endl;
+			cout << "WRONG INPUT. RE-ENTER PLEASE!" << endl;
+			cout << endl;
 		}
-		cin.get();
+		
 
 	}
+	printExit();
 };

@@ -1,6 +1,6 @@
 // this class is incharge of the text interface.
 
-#include <iostream>;
+#include <iostream>
 using namespace std;
 
 class Interface {
@@ -9,6 +9,7 @@ public:
 	friend void printInterface();
 	friend void printExit();
 	friend void printSubMenu(int funcNum);
+	friend int getSelection();
 };
 
 void printInterface() {
@@ -43,6 +44,7 @@ void printSubMenu(int funcNum) {
 		cout << "2. Update an item" << endl;
 		cout << "3. Delete an item" << endl;
 		cout << "Your option: " << endl;
+
 		break;
 	case 2: cout << "Choose your option:" << endl;
 		cout << "1. Add a new customer" << endl;
@@ -88,6 +90,11 @@ void printSubMenu(int funcNum) {
 
 
 	};
-
-
 };
+int getSelection(int num) {
+	int ans; 
+	printSubMenu(num);
+	cin >> ans;
+	cin.get();
+	return ans;
+}
