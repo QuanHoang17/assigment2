@@ -1,7 +1,7 @@
 
-#define VIP "Vip"
-#define REGULAR "Regular"
-#define GUEST "Guest"
+#define VIP 1
+#define REGULAR 2
+#define GUEST 3
 #include <string>
 
 using namespace std;
@@ -20,7 +20,7 @@ public:
 	virtual void  rent(int numOfBorrowed) {
 		listOfRentals+= numOfBorrowed;
 	};
-	virtual string getAccountType() =0;
+	virtual int getAccountType() =0;
 
 	Account(string id, string name, string address, string phone);
 };
@@ -29,7 +29,7 @@ class Guest : public Account {
 public: 
 	Guest(string id, string name, string address, string phone) : Account(id, name, address, phone) {};
 	~Guest() {};
-	string getAccountType() {
+	int getAccountType() {
 		return GUEST;
 	};
 };
@@ -39,7 +39,7 @@ class Regular : public Account {
 public:
 	Regular(string id, string name, string address, string phone) : Account(id, name, address, phone) {};
 	~Regular() {};
-	string getAccountType() {
+	int getAccountType() {
 		return REGULAR;
 	}
 };
@@ -52,7 +52,7 @@ public:
 		this->point = 0;
 	}
 	~Vip() {};
-	string getAccountType(){
+	int getAccountType(){
 		return VIP;
 	}
 	int getPoint() {

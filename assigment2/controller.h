@@ -57,6 +57,7 @@ void Controller::function1() {
 void Controller::function2() {
 	int num = getSelection(2);
 	if (num == 1){
+		// in accounts_management.h
 		addCustomer();
 
 	}

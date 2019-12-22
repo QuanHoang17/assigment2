@@ -90,7 +90,8 @@ void printSubMenu(int funcNum) {
 
 
 	};
-};
+}
+
 int getSelection(int num) {
 	int ans; 
 	printSubMenu(num);
